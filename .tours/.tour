@@ -1,0 +1,100 @@
+{
+  "title": "首次渲染 - 1.vnode的生成",
+  "steps": [
+    {
+      "file": "src/core/instance/index.js",
+      "line": 14,
+      "description": "最开始的地方. Vue构造函数被各种mixin混入了各种方法。\n在new Vue（）时候会先调用`this._init`(是initMixin混入的)\n\n该方法的工作(与本节相关的会加粗):\n0. **装填$options(包括components,filters,生命周期的收集与合并)**\n1. 初始化生命周期(初始化生命周期要用到的变量)\n2. 初始化事件(同上)\n3. 初始化渲染(准备createElement函数)\n3. 调用生命周期beforeCreate\n4. 解析Inject数据\n5. 初始化state(待补充)\n6. 调用Provide\n7. 调用生命周期created",
+      "selection": {
+        "start": {
+          "line": 14,
+          "character": 1
+        },
+        "end": {
+          "line": 17,
+          "character": 15
+        }
+      },
+      "title": "init"
+    },
+    {
+      "file": "src/platforms/web/runtime/index.js",
+      "line": 37,
+      "description": "渲染开始时先调用`$mount`。\n\n``` js\nVue({\n  el:'#app'\n})\n```\n这种写法内部也是调用`$mount`",
+      "title": "$mount"
+    },
+    {
+      "file": "src/core/instance/lifecycle.js",
+      "line": 197,
+      "description": "构造Watcher",
+      "title": "构造watcher"
+    },
+    {
+      "file": "src/core/observer/watcher.js",
+      "line": 93,
+      "description": "Watcher构造时会先调用this.get，内部调用this.getter",
+      "selection": {
+        "start": {
+          "line": 80,
+          "character": 21
+        },
+        "end": {
+          "line": 80,
+          "character": 28
+        }
+      },
+      "title": "调用getter"
+    },
+    {
+      "file": "src/core/instance/lifecycle.js",
+      "line": 189,
+      "description": "watcher的getter就是调用updateComponent，先`vm._render`,再`vm._update`。\n`vm._render`生成vnode",
+      "title": "updateComponent"
+    },
+    {
+      "file": "src/core/instance/render.js",
+      "line": 91,
+      "description": "render就是用户定义的render方法，也可能是template编译出来的render。\nvm.$createElement是用来创建vnode，该方法传递给用户的render,让用户代码创建vnode树.",
+      "selection": {
+        "start": {
+          "line": 91,
+          "character": 15
+        },
+        "end": {
+          "line": 91,
+          "character": 21
+        }
+      },
+      "title": "render生成vnode树"
+    },
+    {
+      "file": "src/core/vdom/create-element.js",
+      "line": 47,
+      "description": "主要工作:\n1. 对children规范化，确保它没有嵌套数组，但对于vue-compiler生成的render是不用做的,compiler已经处理好了\n2. 对普通的html,直接创建vnode\n3. 对于组件，就比较复杂，见后文",
+      "selection": {
+        "start": {
+          "line": 96,
+          "character": 14
+        },
+        "end": {
+          "line": 96,
+          "character": 17
+        }
+      },
+      "title": "createElement"
+    },
+    {
+      "file": "src/core/vdom/create-element.js",
+      "line": 111,
+      "description": "在`src/core/instance/index.js`的init时，options上的components会保存到$options。\n如果当前解析到的tag是一个组件,则调用createComponent",
+      "title": "组件的vnode生成"
+    },
+    {
+      "file": "src/core/vdom/create-component.js",
+      "line": 190,
+      "description": "特殊的vnode,组件相关的参数都放到componentOptions，组件具体相关的vnode还没生成，要在渲染时利用这个vnode去生成。",
+      "title": "createComponent"
+    }
+  ],
+  "ref": "dev"
+}

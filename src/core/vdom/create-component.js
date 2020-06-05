@@ -111,7 +111,7 @@ export function createComponent (
 
   const baseCtor = context.$options._base
 
-  // plain options object: turn it into a constructor
+  // 普通选项对象：将其转换为构造函数
   if (isObject(Ctor)) {
     Ctor = baseCtor.extend(Ctor)
   }
