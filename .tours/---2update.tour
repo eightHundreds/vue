@@ -1,0 +1,76 @@
+{
+  "title": "首次渲染 - 2.update",
+  "steps": [
+    {
+      "file": "src/core/instance/lifecycle.js",
+      "line": 59,
+      "description": "上节已经介绍了vnode树的生成，也就是该方法的第一个参数vnode"
+    },
+    {
+      "file": "src/core/instance/lifecycle.js",
+      "line": 64,
+      "description": "因为是首次渲染,没有prevNode，接着调用`vm.__patch__`\npatch -- 打补丁\n意思是根据两个vnode,将新vnode的变更 \"补\"到DOM树",
+      "selection": {
+        "start": {
+          "line": 64,
+          "character": 5
+        },
+        "end": {
+          "line": 69,
+          "character": 78
+        }
+      }
+    },
+    {
+      "file": "src/platforms/web/runtime/patch.js",
+      "line": 12,
+      "description": "patch是更新的核心，它做了平台无关的抽象工作\nnodeOps，是平台相关的api，比如对dom的增删操作. patch内部不直接操作dom,而是用nodeOps.\npatch也暴露了一些钩子函数,modules就是保存这些钩子的回调.",
+      "selection": {
+        "start": {
+          "line": 4,
+          "character": 10
+        },
+        "end": {
+          "line": 4,
+          "character": 29
+        }
+      }
+    },
+    {
+      "file": "src/core/vdom/patch.js",
+      "line": 700,
+      "description": "首次渲染时，oldVnode是一个dom对象",
+      "selection": {
+        "start": {
+          "line": 709,
+          "character": 17
+        },
+        "end": {
+          "line": 709,
+          "character": 25
+        }
+      }
+    },
+    {
+      "file": "src/core/vdom/patch.js",
+      "line": 743,
+      "description": "创建一个这个dom element对应的vnode",
+      "selection": {
+        "start": {
+          "line": 743,
+          "character": 47
+        },
+        "end": {
+          "line": 743,
+          "character": 72
+        }
+      }
+    },
+    {
+      "file": "src/core/vdom/patch.js",
+      "line": 751,
+      "description": "开始根据vnode创建Dom Element，刚刚的容器Dom Element作为第三个参数传入"
+    }
+  ],
+  "ref": "dev"
+}
