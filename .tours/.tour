@@ -54,7 +54,7 @@
     {
       "file": "src/core/instance/render.js",
       "line": 91,
-      "description": "render就是用户定义的render方法，也可能是template编译出来的render。\nvm.$createElement是用来创建vnode，该方法传递给用户的render,让用户代码创建vnode树.",
+      "description": "render就是用户定义的render方法，也可能是template编译出来的render。\nvm.$createElement是用来创建vnode，该方法传递给用户的render,让用户代码创建vnode树.\n下面进入vm.$createElement看看",
       "selection": {
         "start": {
           "line": 91,
@@ -70,7 +70,7 @@
     {
       "file": "src/core/vdom/create-element.js",
       "line": 47,
-      "description": "主要工作:\n1. 对children规范化，确保它没有嵌套数组，但对于vue-compiler生成的render是不用做的,compiler已经处理好了\n2. 对普通的html,直接创建vnode\n3. 对于组件，就比较复杂，见后文",
+      "description": "主要工作:\n1. 对children规范化，确保它没有嵌套数组，但对于vue-compiler生成的render是不用做的,compiler已经处理好了\n2. 对普通的html,直接创建vnode\n3. 对于组件，就比较复杂，见后文\n\n第三个参数data是数据对象，[参考](https://cn.vuejs.org/v2/guide/render-function.html#%E6%B7%B1%E5%85%A5%E6%95%B0%E6%8D%AE%E5%AF%B9%E8%B1%A1),可以放style,attr,prop等",
       "selection": {
         "start": {
           "line": 96,

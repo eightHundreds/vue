@@ -1,0 +1,46 @@
+{
+  "title": "首次渲染 - 2.2 组件VNode的创建之旅",
+  "steps": [
+    {
+      "file": "src/core/vdom/patch.js",
+      "line": 144,
+      "description": "开始创建"
+    },
+    {
+      "file": "src/core/vdom/patch.js",
+      "line": 214,
+      "description": "- isReactivated(是否是重新激活的)，因为是首次渲染所以肯定不是\n- 这行开始调用init hook。这个hook在组件vnode创建时候加进来的",
+      "selection": {
+        "start": {
+          "line": 213,
+          "character": 15
+        },
+        "end": {
+          "line": 213,
+          "character": 26
+        }
+      }
+    },
+    {
+      "file": "src/core/vdom/create-component.js",
+      "line": 186,
+      "description": "在这里初始化一系列hooks,组件vnode的data使用者无法控制,都是自治的.",
+      "selection": {
+        "start": {
+          "line": 186,
+          "character": 25
+        },
+        "end": {
+          "line": 186,
+          "character": 29
+        }
+      }
+    },
+    {
+      "file": "src/core/vdom/create-component.js",
+      "line": 47,
+      "description": "init hooks中实例化了Vue组件\n紧接着组件实例调用$mount."
+    }
+  ],
+  "ref": "dev"
+}

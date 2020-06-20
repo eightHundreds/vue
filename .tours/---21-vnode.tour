@@ -1,0 +1,50 @@
+{
+  "title": "首次渲染 - 2.1 普通VNode的创建之旅",
+  "steps": [
+    {
+      "file": "src/core/vdom/patch.js",
+      "line": 151,
+      "description": "但VNode是代表普通的tag时",
+      "selection": {
+        "start": {
+          "line": 151,
+          "character": 15
+        },
+        "end": {
+          "line": 151,
+          "character": 18
+        }
+      },
+      "title": "普通VNode-开始创建"
+    },
+    {
+      "file": "src/core/vdom/patch.js",
+      "line": 166,
+      "description": "创建对应的DOM Element",
+      "selection": {
+        "start": {
+          "line": 191,
+          "character": 9
+        },
+        "end": {
+          "line": 191,
+          "character": 23
+        }
+      },
+      "title": "普通VNode-创建DOM Element"
+    },
+    {
+      "file": "src/core/vdom/patch.js",
+      "line": 191,
+      "description": "递归地创建子元素",
+      "title": "普通VNode-创建子元素"
+    },
+    {
+      "file": "src/core/vdom/patch.js",
+      "line": 206,
+      "description": "最后创建好的一颗Dom树插入到容器Dom Element",
+      "title": "普通VNode-插入到容器"
+    }
+  ],
+  "ref": "dev"
+}

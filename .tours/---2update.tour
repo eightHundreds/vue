@@ -1,10 +1,11 @@
 {
-  "title": "首次渲染 - 2.update",
+  "title": "首次渲染 - 2.0 update",
   "steps": [
     {
       "file": "src/core/instance/lifecycle.js",
       "line": 59,
-      "description": "上节已经介绍了vnode树的生成，也就是该方法的第一个参数vnode"
+      "description": "上节已经介绍了vnode树的生成，也就是该方法的第一个参数vnode",
+      "title": "Vue.proptype._update"
     },
     {
       "file": "src/core/instance/lifecycle.js",
@@ -19,7 +20,8 @@
           "line": 69,
           "character": 78
         }
-      }
+      },
+      "title": "vm.__patch__"
     },
     {
       "file": "src/platforms/web/runtime/patch.js",
@@ -34,7 +36,8 @@
           "line": 4,
           "character": 29
         }
-      }
+      },
+      "title": "patch的构造"
     },
     {
       "file": "src/core/vdom/patch.js",
@@ -49,7 +52,8 @@
           "line": 709,
           "character": 25
         }
-      }
+      },
+      "title": "进入patch"
     },
     {
       "file": "src/core/vdom/patch.js",
@@ -64,12 +68,36 @@
           "line": 743,
           "character": 72
         }
-      }
+      },
+      "title": "为容器Element创建vnode"
     },
     {
       "file": "src/core/vdom/patch.js",
       "line": 751,
-      "description": "开始根据vnode创建Dom Element，刚刚的容器Dom Element作为第三个参数传入"
+      "description": "开始根据vnode创建Dom Element，刚刚的容器Dom Element作为第三个参数传入",
+      "title": "开始创建DOM"
+    },
+    {
+      "file": "src/core/vdom/patch.js",
+      "line": 151,
+      "description": "但VNode是代表普通的tag时. 详情进入2.1",
+      "selection": {
+        "start": {
+          "line": 151,
+          "character": 15
+        },
+        "end": {
+          "line": 151,
+          "character": 18
+        }
+      },
+      "title": "普通VNode-开始创建"
+    },
+    {
+      "file": "src/core/vdom/patch.js",
+      "line": 144,
+      "description": "刚刚介绍简单VNode是普通的html情况。但最常见的是VNode代表一个组件。\n详情进入2.2",
+      "title": "组件VNode-开始"
     }
   ],
   "ref": "dev"
