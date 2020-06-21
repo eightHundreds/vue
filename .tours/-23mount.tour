@@ -1,0 +1,106 @@
+{
+  "title": "首次渲染 - 2.3mount生命周期触发",
+  "steps": [
+    {
+      "file": "src/core/vdom/patch.js",
+      "line": 700,
+      "description": "从概念上，子组件mount后，父组件才能mount。  \n前面章节介绍到，组件的渲染是深度优先搜索。  \n直观的想法是在组件渲染的return前去调用mount生命周期，随着函数的return，就能做到子组件先mount，父组件后mount。  \n\n但是Vue并不是这样做,原因还没找到 // TODO\n\nVue的做法是在组件mount后将组件vnode保存到insertedVNodeQueue,在patch的结束时再调用invokeInsertHook\n",
+      "selection": {
+        "start": {
+          "line": 702,
+          "character": 28
+        },
+        "end": {
+          "line": 702,
+          "character": 45
+        }
+      },
+      "title": "开始(TODO)"
+    },
+    {
+      "file": "src/core/vdom/patch.js",
+      "line": 707,
+      "description": "每次patch都会初始化一个insertedVnodeQueue.  \n换句话说,每个组件渲染都有一个insertedVnodeQueue.  \n在后面createElement时insertedVnodeQueue会往下传递",
+      "title": "初始化insertedVnodeQueue",
+      "selection": {
+        "start": {
+          "line": 751,
+          "character": 9
+        },
+        "end": {
+          "line": 751,
+          "character": 18
+        }
+      }
+    },
+    {
+      "file": "src/core/vdom/patch.js",
+      "line": 239,
+      "description": "当前vnode是一个组件vnode(占位vnode).  \n所以会执行到这里,此时vnode已经创建vm并且$mount,接着调用了initComponent.  \n而这行就是调用create hooks.",
+      "selection": {
+        "start": {
+          "line": 239,
+          "character": 7
+        },
+        "end": {
+          "line": 239,
+          "character": 24
+        }
+      },
+      "title": "invokeCreateHooks"
+    },
+    {
+      "file": "src/core/vdom/patch.js",
+      "line": 311,
+      "description": "如果有insert Hooks(首次创建一般都有insertHooks).  \n将当前的vnode保存到insertedVnodeQueue.  \n",
+      "title": "插入insertedVnodeQueue"
+    },
+    {
+      "file": "src/core/vdom/patch.js",
+      "line": 290,
+      "description": "有时vnode是普通元素的vnode,但是他子元素可能是组件vnode.  \n在循环创建子元素时,将insertedVnodeQueue下传.  \n总之只有组件会patch,一次patch中有一个insertedVnodeQueue.它保存了本次patch,当前组件内子组件的vnode(是组件vnode不是普通element vnode)",
+      "title": "子元素处理"
+    },
+    {
+      "file": "src/core/vdom/patch.js",
+      "line": 800,
+      "description": "在patch的最后调用insert hook",
+      "title": "调用insert hook"
+    },
+    {
+      "file": "src/core/vdom/patch.js",
+      "line": 579,
+      "description": "如果是首次渲染且有父vnode,则将本组件的insertedVnodeQueque保存到pendingInsert.  \n否则循环vnode,调用它们的insert hook.",
+      "title": "子组件向上传递insertedVnodeQueue"
+    },
+    {
+      "file": "src/core/vdom/patch.js",
+      "line": 233,
+      "description": "子组件的patch结束后会返回到父组件的initComponent, 子组件通过pendingInsert传上来的insertedVodeQueue会放到父组件的insertedVodeQueue",
+      "title": "父组件接受子组件传递的insertedVnodeQueue"
+    },
+    {
+      "file": "src/core/vdom/create-component.js",
+      "line": 71,
+      "description": "insert hooks就是调用mounted生命周期",
+      "title": "insert hook内部"
+    },
+    {
+      "file": "src/core/instance/lifecycle.js",
+      "line": 210,
+      "description": "还有这个地方会调用mounted,一般是根组件",
+      "selection": {
+        "start": {
+          "line": 210,
+          "character": 18
+        },
+        "end": {
+          "line": 210,
+          "character": 27
+        }
+      },
+      "title": "根组件的mounted"
+    }
+  ],
+  "ref": "dev"
+}

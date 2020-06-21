@@ -750,7 +750,7 @@ export function createPatchFunction (backend) {
         // create new node
         createElm(
           vnode,
-          insertedVnodeQueue,// TODO 这个东西的作用?
+          insertedVnodeQueue,
           // extremely rare edge case: do not insert if old element is in a
           // leaving transition. Only happens when combining transition +
           // keep-alive + HOCs. (#4590)
