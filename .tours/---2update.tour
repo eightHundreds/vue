@@ -96,8 +96,7 @@
     {
       "file": "src/core/vdom/patch.js",
       "line": 144,
-      "description": "刚刚介绍简单VNode是普通的html情况。但最常见的是VNode代表一个组件。\n详情进入2.2",
-      "title": "组件VNode-开始"
+      "description": "刚刚介绍简单VNode是普通的html情况。但最常见的是VNode代表一个组件。\n详情进入2.2"
     }
   ],
   "ref": "dev"

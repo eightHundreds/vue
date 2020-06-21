@@ -4,7 +4,7 @@
     {
       "file": "src/core/instance/index.js",
       "line": 14,
-      "description": "最开始的地方. Vue构造函数被各种mixin混入了各种方法。\n在new Vue（）时候会先调用`this._init`(是initMixin混入的)\n\n该方法的工作(与本节相关的会加粗):\n0. **装填$options(包括components,filters,生命周期的收集与合并)**\n1. 初始化生命周期(初始化生命周期要用到的变量)\n2. 初始化事件(同上)\n3. 初始化渲染(准备createElement函数)\n3. 调用生命周期beforeCreate\n4. 解析Inject数据\n5. 初始化state(待补充)\n6. 调用Provide\n7. 调用生命周期created",
+      "description": "最开始的地方. Vue构造函数被各种mixin混入了各种方法。\n在new Vue（）时候会先调用`this._init`(是initMixin混入的)\n\n该方法的工作(与本节相关的会加粗):\n0. **装填$options(包括components,filters,生命周期的收集与合并)**\n1. 初始化生命周期(初始化生命周期要用到的变量)\n2. 初始化事件(同上)\n3. 初始化渲染(准备createElement函数)\n3. 调用生命周期beforeCreate\n4. 解析Inject数据\n5. 初始化state(待补充)\n6. 调用Provide\n7. 调用生命周期created\n\n\nVue的首次渲染是一个深度优先遍历\n",
       "selection": {
         "start": {
           "line": 14,

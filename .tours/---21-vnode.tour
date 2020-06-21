@@ -41,6 +41,12 @@
     },
     {
       "file": "src/core/vdom/patch.js",
+      "line": 290,
+      "description": "递归调用createElm,将创建结果挂在父vnode.elm上",
+      "title": "普通VNode-递归调用createElement"
+    },
+    {
+      "file": "src/core/vdom/patch.js",
       "line": 206,
       "description": "最后创建好的一颗Dom树插入到容器Dom Element",
       "title": "普通VNode-插入到容器"
