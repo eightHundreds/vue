@@ -10,7 +10,7 @@
     {
       "file": "src/core/vdom/patch.js",
       "line": 214,
-      "description": "- isReactivated(是否是重新激活的)，因为是首次渲染所以肯定不是\n- 这行开始调用init hook。这个hook在组件[vnode创建][首次渲染 - 1.vnode的生成#9]时候加进来的\n\n接着看看init hooks的逻辑\n",
+      "description": "- isReactivated(是否是重新激活的)，因为是首次渲染所以肯定不是\n- 这行开始调用init hook。这个hook在组件[vnode创建][首次渲染 - 1.vnode的生成#9]时候加进来的\n\n接下来回到组件vnode创建的逻辑,看看",
       "selection": {
         "start": {
           "line": 213,
@@ -26,15 +26,15 @@
     {
       "file": "src/core/vdom/create-component.js",
       "line": 186,
-      "description": "在创建VNode时候初始化hooks\n组件vnode的data使用者无法控制,是自治的.",
+      "description": "在创建VNode时候注册hooks.\n\n注意这里组件vnode的data开发者一般无法控制,是vue自治的.(因为是组件VNode,它只是个\"占位符\")",
       "selection": {
         "start": {
           "line": 186,
-          "character": 3
+          "character": 25
         },
         "end": {
           "line": 186,
-          "character": 24
+          "character": 29
         }
       },
       "title": "installComponentHooks"
@@ -42,7 +42,7 @@
     {
       "file": "src/core/vdom/create-component.js",
       "line": 47,
-      "description": "init hooks中实例化了Vue组件\n紧接着组件实例调用$mount. 这样回到了 [最初的地方][首次渲染 - 1.vnode的生成#1]",
+      "description": "init hook中实例化了Vue组件\n紧接着组件实例调用$mount. 这样回到了 [最初的地方][首次渲染 - 1.vnode的生成#1]",
       "title": "createComponentInstanceForVnode"
     },
     {
