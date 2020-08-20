@@ -1,0 +1,11 @@
+{
+  "title": "更新 - 待整理",
+  "steps": [
+    {
+      "file": "src/core/vdom/patch.js",
+      "line": 717,
+      "description": "开始组件的更新吗"
+    }
+  ],
+  "ref": "dev"
+}
